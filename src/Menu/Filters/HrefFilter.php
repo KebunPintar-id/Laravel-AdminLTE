@@ -50,7 +50,7 @@ class HrefFilter implements FilterInterface
         // If url attribute is available, use it to make the href.
 
         if (isset($item['url'])) {
-            return $this->urlGenerator->to($item['url']);
+            return $this->urlGenerator->to(tenant('id') . '/' .$item['url']);
         }
 
         // When url is not available, check for route attribute.
